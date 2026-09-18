@@ -1,0 +1,440 @@
+<title>Faisal Khan — Builds</title>
+<style>
+  :root{
+    --paper:#eef0f2;
+    --card:#ffffff;
+    --ink:#0d1117;
+    --ink-soft:#565f6b;
+    --line:#0d1117;
+    --accent:#ffcc33;
+    --accent-ink:#0d1117;
+    --shadow:6px 6px 0 var(--ink);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0d1117;
+      --card:#161b22;
+      --ink:#f2f4f7;
+      --ink-soft:#9aa4b2;
+      --line:#f2f4f7;
+      --accent:#ffcc33;
+      --accent-ink:#0d1117;
+      --shadow:6px 6px 0 var(--line);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0d1117;
+    --card:#161b22;
+    --ink:#f2f4f7;
+    --ink-soft:#9aa4b2;
+    --line:#f2f4f7;
+    --accent:#ffcc33;
+    --accent-ink:#0d1117;
+    --shadow:6px 6px 0 var(--line);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',Arial,sans-serif;
+    padding-inline:20px;
+    padding-block:44px 70px;
+  }
+  .wrap{max-width:1040px;margin:0 auto;}
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    background:var(--accent);
+    color:var(--accent-ink);
+    border:2px solid var(--line);
+    padding:5px 12px;
+    margin-bottom:22px;
+  }
+  .eyebrow .dot{
+    width:7px;height:7px;background:var(--accent-ink);
+    animation:blink 1.6s steps(1) infinite;
+  }
+  @keyframes blink{50%{opacity:0.15;}}
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    flex-wrap:wrap;
+    border-bottom:4px solid var(--line);
+    padding-bottom:28px;
+  }
+  header h1{
+    font-family:'Archivo Black',Arial,sans-serif;
+    font-size:clamp(40px,8vw,76px);
+    line-height:0.92;
+    letter-spacing:-1.5px;
+    text-transform:uppercase;
+    margin:0;
+  }
+  .hgroup{max-width:640px;}
+  .hgroup p{
+    font-size:15.5px;
+    line-height:1.65;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:16px 0 0;
+  }
+  .contact-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'JetBrains Mono',monospace;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.4px;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:14px 20px;
+    border:2px solid var(--line);
+    box-shadow:var(--shadow);
+    flex:none;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .contact-btn:hover{
+    transform:translate(3px,3px);
+    box-shadow:2px 2px 0 var(--line);
+  }
+  .contact-btn svg{width:16px;height:16px;}
+
+  .stats{
+    display:flex;
+    gap:0;
+    margin-top:26px;
+    border:2px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .stat{
+    flex:1;
+    min-width:140px;
+    padding:14px 18px;
+    border-right:2px solid var(--line);
+    font-family:'JetBrains Mono',monospace;
+  }
+  .stat:last-child{border-right:none;}
+  .stat .n{
+    font-size:22px;
+    font-weight:700;
+    color:var(--accent-ink);
+    background:var(--accent);
+    display:inline-block;
+    padding:0 6px;
+  }
+  .stat .l{
+    display:block;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:8px;
+  }
+
+  .sec-title{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin:52px 0 24px;
+  }
+  .sec-title h2{
+    font-family:'Archivo Black',Arial,sans-serif;
+    font-size:26px;
+    text-transform:uppercase;
+    letter-spacing:-0.5px;
+    margin:0;
+  }
+  .sec-title .bar{
+    flex:1;
+    height:10px;
+    background:repeating-linear-gradient(45deg,var(--line) 0 2px, transparent 2px 8px);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:22px;
+  }
+  .card{
+    background:var(--card);
+    border:2px solid var(--line);
+    box-shadow:var(--shadow);
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{
+    transform:translate(3px,3px);
+    box-shadow:2px 2px 0 var(--line);
+  }
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+  }
+  .idx{
+    font-family:'Archivo Black',Arial,sans-serif;
+    font-size:32px;
+    line-height:1;
+    color:var(--card);
+    -webkit-text-stroke:1.4px var(--line);
+  }
+  .icon{
+    width:38px;height:38px;
+    background:var(--ink);
+    color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    flex:none;
+    border:2px solid var(--line);
+  }
+  .icon svg{width:19px;height:19px;}
+  .tag{
+    align-self:flex-start;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:0.8px;
+    text-transform:uppercase;
+    border:2px solid var(--line);
+    padding:3px 9px;
+  }
+  .card h3{
+    font-family:'Archivo Black',Arial,sans-serif;
+    font-size:19px;
+    line-height:1.2;
+    text-transform:uppercase;
+    letter-spacing:-0.2px;
+    margin:2px 0 0;
+  }
+  .card p{
+    font-size:13.5px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    margin:0;
+    flex:1;
+  }
+  .open-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--ink);
+    text-decoration:none;
+    border-top:2px solid var(--line);
+    padding-top:10px;
+    text-transform:uppercase;
+  }
+  .open-link span{
+    background:var(--accent);
+    padding:1px 5px;
+  }
+  .open-link svg{width:13px;height:13px;transition:transform .15s ease;}
+  .open-link:hover svg{transform:translate(2px,-2px);}
+
+  footer{
+    margin-top:60px;
+    padding-top:20px;
+    border-top:2px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  footer a{color:var(--ink);}
+
+  @media (max-width:480px){
+    .grid{grid-template-columns:1fr;}
+    .stat{min-width:45%;}
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+<div class="wrap">
+
+  <span class="eyebrow"><span class="dot"></span> Shipping in public</span>
+
+  <header>
+    <div class="hgroup">
+      <h1>Faisal Khan</h1>
+      <p>Eight small tools I've designed and shipped — quiz makers, account trackers, a reminder system, a farm manager and a business dashboard. Every card below links straight to the live build.</p>
+    </div>
+    <a class="contact-btn" href="https://t.me/faisal_gds" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+      Contact Me
+    </a>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><span class="n">08</span><span class="l">Live Builds</span></div>
+    <div class="stat"><span class="n">DHK</span><span class="l">Dhaka, Bangladesh</span></div>
+    <div class="stat"><span class="n">●</span><span class="l">Actively Building</span></div>
+  </div>
+
+  <div class="sec-title">
+    <h2>The Builds</h2>
+    <span class="bar"></span>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-top">
+        <span class="idx">01</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h9a2 2 0 0 1 2 2v13"/><path d="M13 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13"/><path d="M8 9h6M8 13h8M8 17h4"/></svg>
+        </div>
+      </div>
+      <span class="tag">Education Tool</span>
+      <h3>Word MCQ Studio</h3>
+      <p>Upload a Word document of MCQ questions and it converts them into ready-made PowerPoint slides or a live Google Form quiz — pick whichever output you need.</p>
+      <a class="open-link" href="https://faisalkhanbusinessctg-jpg.github.io/word-mcq-studio/" target="_blank" rel="noopener">
+        <span>Open</span> Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="idx">02</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 15h3"/></svg>
+        </div>
+      </div>
+      <span class="tag">Finance Tool</span>
+      <h3>মেস হিসাব — Mess Accounts</h3>
+      <p>A Bengali-language ledger for shared mess or hostel living — logs daily meals and expenses and keeps every member's balance straight, automatically.</p>
+      <a class="open-link" href="https://faisalkhanbusinessctg-jpg.github.io/mess/" target="_blank" rel="noopener">
+        <span>Open</span> Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="idx">03</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+      </div>
+      <span class="tag">Utility</span>
+      <h3>Teacher Reminder</h3>
+      <p>A reminder system built for teachers — keeps class schedules and exam dates organized alongside teacher profiles, so nothing slips through.</p>
+      <a class="open-link" href="https://faisalkhanbusinessctg-jpg.github.io/Teaser-reminder/" target="_blank" rel="noopener">
+        <span>Open</span> Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="idx">04</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7S9 2 6.5 3.5 8 7 12 7Z"/><path d="M12 7s3-5 5.5-3.5S16 7 12 7Z"/></svg>
+        </div>
+      </div>
+      <span class="tag">Interactive Gift</span>
+      <h3>Rapta's Birthday Gift</h3>
+      <p>A one-off, personalized birthday page for a friend — an animated arrow-drawing wish-making moment wrapped around a handwritten set of birthday messages.</p>
+      <a class="open-link" href="https://faisalkhanbusinessctg-jpg.github.io/rapta-birthday-gift/" target="_blank" rel="noopener">
+        <span>Open</span> Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="idx">05</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg>
+        </div>
+      </div>
+      <span class="tag">Data Tool</span>
+      <h3>Google Form Result</h3>
+      <p>Takes raw Google Form responses and turns them into a clean Excel grading sheet — auto-scores the MCQs and leaves room to enter written-exam marks by hand.</p>
+      <a class="open-link" href="https://faisalkhanbusinessctg-jpg.github.io/Google-Form-Result/" target="_blank" rel="noopener">
+        <span>Open</span> Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="idx">06</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="13" rx="6" ry="8"/><path d="M12 5c1.5-2 3-2.5 4-2"/></svg>
+        </div>
+      </div>
+      <span class="tag">Farm Management</span>
+      <h3>Egg Farm Tracker</h3>
+      <p>A Bengali-language operations app for a poultry farm — tracks finances, bird health, feed stock and outstanding debts in one place, synced to the cloud.</p>
+      <a class="open-link" href="https://egg-farmimg.web.app/" target="_blank" rel="noopener">
+        <span>Open</span> Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="idx">07</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+        </div>
+      </div>
+      <span class="tag">Learning Platform</span>
+      <h3>Business Titan — Dashboard</h3>
+      <p>A student learning portal for the Business Titan program — video lectures, watch-progress tracking and profile management in one dashboard.</p>
+      <a class="open-link" href="https://businesstitan.web.app/dashboard.html" target="_blank" rel="noopener">
+        <span>Open</span> Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="idx">08</span>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M9 17h6"/></svg>
+        </div>
+      </div>
+      <span class="tag">Telegram Bot</span>
+      <h3>Business Titan — AI Bot</h3>
+      <p>An always-on Telegram bot for Business Titan — reachable directly in chat as <b style="color:var(--ink)">@businesstitanaibot</b>.</p>
+      <a class="open-link" href="https://t.me/businesstitanaibot" target="_blank" rel="noopener">
+        <span>Open</span> in Telegram
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>Faisal Khan — Dhaka, Bangladesh</span>
+    <a href="https://t.me/faisal_gds" target="_blank" rel="noopener">@faisal_gds on Telegram</a>
+  </footer>
+
+</div>
